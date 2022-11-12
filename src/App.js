@@ -5,8 +5,6 @@ import TopBar from "./scenes/global/TopBar";
 function App() {
 
   const [theme, colorMode] = useMode();
-  console.log(theme);
-  console.log(colorMode);
 
   const handleDarkModeButton = () => {
     colorMode.toggleColorMode();
