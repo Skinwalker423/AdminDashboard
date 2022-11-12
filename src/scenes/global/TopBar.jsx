@@ -22,16 +22,30 @@ const TopBar = () => {
 
 
   return (
-      <Box display={'flex'} justifyContent='space-between'>
-        <Box border={`2px solid ${colors.gray[400]}`}>
-          <InputBase />
+      <Box display={'flex'} justifyContent='space-between' p={2} borderBottom={`2px solid ${colors.gray[400]}`}>
+        <Box 
+          border={`2px solid ${colors.gray[400]}`} 
+          borderRadius="3px"
+          backgroundColor={colors.primary[400]}
+        >
+          <InputBase sx={{ml: 2, flex: 1, }} />
           <IconButton><SearchOutlinedIcon /></IconButton>
         </Box>
-        <Box>
-          <IconButton onClick={handleDarkModeButton}>{palette.mode === 'dark' ? <NightlightRoundOutlinedIcon /> : <NightlightOutlinedIcon />}</IconButton>
-          <IconButton><NotificationsNoneOutlinedIcon /></IconButton>
-          <IconButton><PersonOutlineOutlinedIcon /></IconButton>
-          <IconButton><SettingsOutlinedIcon /></IconButton>
+        <Box
+          display='flex'
+        >
+          <IconButton onClick={handleDarkModeButton}>
+            {palette.mode === 'dark' ? <NightlightRoundOutlinedIcon /> : <NightlightOutlinedIcon />}
+          </IconButton>
+          <IconButton>
+            <NotificationsNoneOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <PersonOutlineOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <SettingsOutlinedIcon />
+          </IconButton>
         </Box>
       </Box>
     
