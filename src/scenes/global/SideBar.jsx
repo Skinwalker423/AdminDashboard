@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {Sidebar, Menu, MenuItem,useProSidebar} from 'react-pro-sidebar';
-// import 'react-pro-sidebar/dist/css/styles.css';
+import {Sidebar, Menu, MenuItem,useProSidebar, } from 'react-pro-sidebar';
 import {Box, IconButton, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { tokens } from '../../theme';
@@ -30,31 +29,34 @@ const SideBar = () => {
   return (
     <Box
       sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.blueAccent[400]} !imporant`,
+        ".sidebar": {
+          backgroundColor: `${colors.blueAccent[700]} !important;`,
+    
         },
-        "& .pro-icon-wrapper": {
+        ".icon-wrapper": {
           backgroundColor: "transparent !important",
         },
-        "& .pro-inner-item": {
+        ".inner-item": {
           padding: "5px 35px 5px 20px !important",
         },
-        "& .pro-inner-item:hover": {
+        ".inner-item:hover": {
           color: "#868dfb !important",
         },
-        "& .pro-menu-item.active": {
+        ".menu-item.active": {
           color: "#6870fa !important",
         },
       }}
     >
-      <Sidebar px={{
-        width: '20%',
-        height: '100%',
-      }}>
+      <Sidebar>
         <Menu>
           {isDislayed && (
           <Box>
-            <Box>
+            <Box display='flex' justifyContent={'flex-end'}>
+              <IconButton onClick={() => collapseSidebar()}>
+                <MenuOutlinedIcon />
+              </IconButton>
+            </Box>
+            <Box textAlign={'center'}>
               <img
                 src='./favicon.ico'
                 alt='profile-user'
@@ -81,9 +83,44 @@ const SideBar = () => {
               <HomeOutlinedIcon />
             </IconButton>
           </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
+          <MenuItem>
+            <IconButton>
+              <HomeOutlinedIcon />
+            </IconButton>
+          </MenuItem>
         </Menu>
       </Sidebar>
-      <button type='button' onClick={() => collapseSidebar()}>toggle sidebar</button>
+
     </Box>
   )
 }

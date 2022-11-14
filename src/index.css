@@ -17,6 +17,24 @@ body,
   position: relative;
 }
 
+.bars{
+  display: flex;
+}
+
+.sidebar{
+  height: 100vh;
+}
+
+
+.topbarWrapper{
+  width: 100%;
+}
+
+.sidebarWrapper{
+  height: 100%;
+  
+}
+
 ::-webkit-scrollbar{
   width: 10px;
 }

@@ -30,8 +30,16 @@ function App() {
         <CssBaseline />
         <div className="App">
           <main className="content">
-            <TopBar />
-            <SideBar />
+            <div className="bars">
+              <div className="sidebarWrapper">
+                <SideBar />
+              </div>
+              <div className="topbarWrapper">
+                <TopBar />
+              </div>
+            </div>
+            
+            {/* <SideBar /> */}
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
@@ -46,6 +54,7 @@ function App() {
               <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </main>
+          
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
