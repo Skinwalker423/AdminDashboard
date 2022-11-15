@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Sidebar, Menu, MenuItem,useProSidebar, } from 'react-pro-sidebar';
 import {Box, IconButton, Typography, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { tokens } from '../../theme';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
@@ -24,12 +24,12 @@ const Item = ({title, to, icon, selected, setSelected}) => {
   return (
     <MenuItem 
       active={selected === title}
-      style={{color: colors.gray[100]}}
       onClick={() => setSelected(title)}
       icon={icon}
     >
-      <Typography>{title}</Typography>
-      <Link to={to} />
+      <NavLink style={{ textDecoration: 'none'}} to={to}>
+        <Typography color={selected === title ? "#6870fa" : colors.primary[300]}>{title}</Typography>
+      </NavLink>
     </MenuItem>
   )
 }
@@ -41,7 +41,7 @@ const SideBar = () => {
   const colors = tokens(palette.mode);
   const [isDislayed, setIsDisplayed] = useState(true);
   const [selected, setSelected] = useState('Dashboard');
-  const { collapseSidebar} = useProSidebar();
+  const { collapseSidebar, collapsed} = useProSidebar();
 
 
   return (
@@ -49,20 +49,20 @@ const SideBar = () => {
       sx={{
         ".sidebar": {
           background: `${colors.primary[400]} !important;`,
-    
         },
-        ".icon-wrapper": {
-          backgroundColor: "transparent !important",
+        "& .menu-item:hover": {
+          color: "#6870fa !important",      
         },
-        ".inner-item": {
-          padding: "5px 35px 5px 20px !important",
+        "& .menu-item a p:hover": {
+          color: "#6870fa",      
         },
-        ".inner-item:hover": {
-          color: "#868dfb !important",
+        "& .menu-anchor:active": {
+          color: "#6870fa !important",       
         },
-        ".menu-item.active": {
+        "& .menu-item.active": {
           color: "#6870fa !important",
         },
+
       }}
     >
       <Sidebar>
@@ -74,16 +74,16 @@ const SideBar = () => {
                 <MenuOutlinedIcon />
               </IconButton>
             </Box>
-            <Box textAlign={'center'}>
+            <Box textAlign={'center'} >
               <img
                 src='./favicon.ico'
                 alt='profile-user'
-                width='100px'
-                height='100px'
+                width='75px'
+                height='75px'
                 style={{cursor: 'pointer', borderRadius: '50%'}}
               />
             </Box>
-            <Box textAlign={'center'}>
+            {!collapsed && <Box textAlign={'center'}>
               <Typography 
                 variant='h2' 
                 color={colors.gray[100]}
@@ -95,13 +95,20 @@ const SideBar = () => {
               <Typography>
                 Admin 
               </Typography>
-            </Box>
+            </Box>}
           </Box>
           )}
           <Box>
             <Item
+              to={'/'}
+              title={'Dashboard'}
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
               to={'/team'}
-              title={'Team'}
+              title={'Manage Team'}
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -122,8 +129,8 @@ const SideBar = () => {
              />
             <Item
               to={'/form'}
-              title={'Form'}
-              icon={<ReceiptLongOutlinedIcon />}
+              title={'Profile Form'}
+              icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
@@ -135,30 +142,37 @@ const SideBar = () => {
               setSelected={setSelected}
              />
             <Item
-              to={'/'}
-              title={'home'}
-              icon={<HomeOutlinedIcon />}
+              to={'/invoices'}
+              title={'Invoices Balances'}
+              icon={<ReceiptLongOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
             <Item
-              to={'/'}
-              title={'home'}
-              icon={<HomeOutlinedIcon />}
+              to={'/line'}
+              title={'Line Chart'}
+              icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
             <Item
-              to={'/'}
-              title={'home'}
-              icon={<HomeOutlinedIcon />}
+              to={'/pie'}
+              title={'Pie Chart'}
+              icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
             <Item
-              to={'/'}
-              title={'home'}
-              icon={<HomeOutlinedIcon />}
+              to={'/calendar'}
+              title={'Calendar'}
+              icon={<CalendarMonthOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/faq'}
+              title={'FAQ'}
+              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
