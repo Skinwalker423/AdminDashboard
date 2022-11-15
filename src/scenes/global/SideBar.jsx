@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Sidebar, Menu, MenuItem,useProSidebar, } from 'react-pro-sidebar';
 import {Box, IconButton, Typography, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { tokens } from '../../theme';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
@@ -16,6 +16,24 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 
+const Item = ({title, to, icon, selected, setSelected}) => {
+
+  const {palette} = useTheme();
+  const colors = tokens(palette.mode);
+
+  return (
+    <MenuItem 
+      active={selected === title}
+      onClick={() => setSelected(title)}
+      icon={icon}
+    >
+      <NavLink style={{ textDecoration: 'none'}} to={to}>
+        <Typography color={selected === title ? "#6870fa" : colors.primary[300]}>{title}</Typography>
+      </NavLink>
+    </MenuItem>
+  )
+}
+
 
 const SideBar = () => {
 
@@ -23,28 +41,28 @@ const SideBar = () => {
   const colors = tokens(palette.mode);
   const [isDislayed, setIsDisplayed] = useState(true);
   const [selected, setSelected] = useState('Dashboard');
-  const { collapseSidebar} = useProSidebar();
+  const { collapseSidebar, collapsed} = useProSidebar();
 
 
   return (
     <Box
       sx={{
         ".sidebar": {
-          backgroundColor: `${colors.blueAccent[700]} !important;`,
-    
+          background: `${colors.primary[400]} !important;`,
         },
-        ".icon-wrapper": {
-          backgroundColor: "transparent !important",
+        "& .menu-item:hover": {
+          color: "#6870fa !important",      
         },
-        ".inner-item": {
-          padding: "5px 35px 5px 20px !important",
+        "& .menu-item a p:hover": {
+          color: "#6870fa",      
         },
-        ".inner-item:hover": {
-          color: "#868dfb !important",
+        "& .menu-anchor:active": {
+          color: "#6870fa !important",       
         },
-        ".menu-item.active": {
+        "& .menu-item.active": {
           color: "#6870fa !important",
         },
+
       }}
     >
       <Sidebar>
@@ -56,68 +74,109 @@ const SideBar = () => {
                 <MenuOutlinedIcon />
               </IconButton>
             </Box>
-            <Box textAlign={'center'}>
+            <Box textAlign={'center'} >
               <img
                 src='./favicon.ico'
                 alt='profile-user'
-                width='100px'
-                height='100px'
+                width='75px'
+                height='75px'
                 style={{cursor: 'pointer', borderRadius: '50%'}}
               />
             </Box>
-            <Box textAlign={'center'}>
+            {!collapsed && <Box textAlign={'center'}>
               <Typography 
                 variant='h2' 
                 color={colors.gray[100]}
+                fontWeight='bold'
+                sx={{m: '10px 0 0 0'}}
               >
                 Skinwalker
               </Typography>
               <Typography>
                 Admin 
               </Typography>
-            </Box>
+            </Box>}
           </Box>
           )}
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
-          <MenuItem>
-            <IconButton>
-              <HomeOutlinedIcon />
-            </IconButton>
-          </MenuItem>
+          <Box>
+            <Item
+              to={'/'}
+              title={'Dashboard'}
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/team'}
+              title={'Manage Team'}
+              icon={<PeopleOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/bar'}
+              title={'Bar Chart'}
+              icon={<InsertChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/contacts'}
+              title={'Contacts'}
+              icon={<ContactsOutlinedIcon/>}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/form'}
+              title={'Profile Form'}
+              icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/geography'}
+              title={'Geography'}
+              icon={<MapOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/invoices'}
+              title={'Invoices Balances'}
+              icon={<ReceiptLongOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/line'}
+              title={'Line Chart'}
+              icon={<TimelineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/pie'}
+              title={'Pie Chart'}
+              icon={<PieChartOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/calendar'}
+              title={'Calendar'}
+              icon={<CalendarMonthOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/faq'}
+              title={'FAQ'}
+              icon={<HelpOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+          </Box>
         </Menu>
       </Sidebar>
 
