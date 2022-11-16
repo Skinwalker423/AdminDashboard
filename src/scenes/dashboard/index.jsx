@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../../components/Header';
 
 const Dashboard = () => {
   return (
-    <div>index</div>
+    <div>
+      <Header 
+        title='Header Title'
+        subTitle='subtitle'
+      />
+    </div>
   )
 }
 
