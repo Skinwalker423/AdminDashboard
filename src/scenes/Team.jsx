@@ -27,21 +27,18 @@ const columns = [
     field: 'id', 
     headerName: 'ID', 
     width: 150,
-    headerClassName: 'super-app-theme--header',
   },
   { 
     field: 'name', 
     headerName: 'Name', 
     flex: 1, 
     cellClassName: 'name-column--cell',
-    headerClassName: 'super-app-theme--header',
   },
   { 
     field: 'email', 
     headerName: 'Email', 
     flex: 1, 
     cellClassName: 'email-column--cell',
-    headerClassName: 'super-app-theme--header',
   },
   { 
     field: 'age', 
@@ -51,21 +48,18 @@ const columns = [
     headerAlign: 'left',
     align: 'left', 
     cellClassName: 'age-column--cell',
-    headerClassName: 'super-app-theme--header',
   },
   { 
     field: 'phone', 
     headerName: 'Phone', 
     flex: 1, 
     cellClassName: 'field-column--cell',
-    headerClassName: 'super-app-theme--header',
   },
   { 
     field: 'access', 
     headerName: 'Access Level', 
     flex: 1, 
     cellClassName: 'access-column--cell',
-    headerClassName: 'super-app-theme--header',
     renderCell: ({row: {access}}) => {
       return (
         <Box 
@@ -94,10 +88,28 @@ const columns = [
     <Box m='20px'>
       <Header title={'TEAM'} subTitle={'Managing team members'} />
       <Box m='40px 0 0 0' height='70vh' width='100%' sx={{
-        '.super-app-theme--header': {
-          backgroundColor: colors.redAccent[300],
-          color: colors.primary[400]
-        }
+        '& .MuiDataGrid-columnHeaders': {
+          backgroundColor: colors.blueAccent[700],
+        },
+        '& .name-column--cell': {
+          color: colors.greenAccent[300],
+    
+        },
+        '& .MuiDataGrid-cell': {
+          borderBottom: 'none',
+        },
+        '& .MuiDataGrid-root': {
+          border: 'none',
+        },
+        '& .MuiDataGrid-footerContainer': {
+          borderTop: 'none',
+          backgroundColor: colors.blueAccent[700],
+        },
+        '& .MuiDataGrid-virtualScroller': {
+          backgroundColor: colors.primary[400],
+        },
+
+
       }}>
         <DataGrid
           rows={rows}
