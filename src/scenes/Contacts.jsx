@@ -83,7 +83,7 @@ const columns = [
 
   return (
     <Box m='20px'>
-      <Header title={'TEAM'} subTitle={'Managing team members'} />
+      <Header title={'CONTACTS'} subTitle={'List of contacts for future reference'} />
       <Box m='40px 0 0 0' height='70vh' width='100%' sx={{
         '& .MuiDataGrid-columnHeaders': {
           backgroundColor: colors.blueAccent[700],
@@ -105,14 +105,21 @@ const columns = [
         '& .MuiDataGrid-virtualScroller': {
           backgroundColor: colors.primary[400],
         },
+        '& .MuiDataGrid-toolbarContainer .MuiButton-text': {
+          color: `${colors.gray[100]} !important`
+        },
 
 
       }}>
         <DataGrid
           rows={rows}
           columns={columns}
+          components={{
+            Toolbar: GridToolbar,
+          }}
           />
         </Box>
+
     </Box>
   )
 }
