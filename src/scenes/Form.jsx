@@ -10,7 +10,7 @@ import * as yup from 'yup';
     email: '', 
     password: '',
     firstName: '',
-    LastName: '',
+    lastName: '',
     contact: '',
     address1: '',
     address2: '',
@@ -43,8 +43,45 @@ const Form = () => {
       <Formik
        initialValues={initialValues}
        validationSchema={userSchema}
+       onSubmit={handleFormSubmit}
        >
-     </Formik>
+        {({errors, touched, values, handleBlur, handleChange, handleSubmit}) => {
+          return (
+            <form onSubmit={handleSubmit}>
+              <Box 
+                display='grid' 
+                gap='30px' 
+                gridTemplateColumns='repeat(4, minmax(0, 1fr))' 
+                sx={{
+                  '& > div': {gridColumn: isNotMobile ? undefined : 'span 4'}
+                }}
+              >
+                <TextField
+                  fullWidth
+                  variant='filled'
+                  type='text'
+                  label='First Name'
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.firstName}
+                  name='firstName'
+                 />
+                <TextField
+                  fullWidth
+                  variant='filled'
+                  type='text'
+                  label='Last Name'
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.lastName}
+                  name='lasttName'
+                 />
+              </Box>
+              
+            </form>
+          )
+        }}
+      </Formik>
     </Box>
   )
 }
