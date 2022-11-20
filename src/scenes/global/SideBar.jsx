@@ -106,17 +106,11 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
              />
+            <Typography sx={{m: '10px 0 10px 20px'}} color={colors.gray[400]}>Data</Typography>
             <Item
               to={'/team'}
               title={'Manage Team'}
               icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-             />
-            <Item
-              to={'/bar'}
-              title={'Bar Chart'}
-              icon={<InsertChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
@@ -127,10 +121,40 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
              />
+             <Item
+              to={'/invoices'}
+              title={'Invoices Balances'}
+              icon={<ReceiptLongOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Typography sx={{m: '10px 0 10px 20px'}} color={colors.gray[400]}>Pages</Typography>
             <Item
               to={'/form'}
               title={'Profile Form'}
               icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+             <Item
+              to={'/calendar'}
+              title={'Calendar'}
+              icon={<CalendarMonthOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/faq'}
+              title={'FAQ'}
+              icon={<HelpOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+             />
+             <Typography sx={{m: '10px 0 10px 20px'}} color={colors.gray[400]}>Charts</Typography>
+             <Item
+              to={'/bar'}
+              title={'Bar Chart'}
+              icon={<InsertChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
@@ -141,13 +165,7 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
              />
-            <Item
-              to={'/invoices'}
-              title={'Invoices Balances'}
-              icon={<ReceiptLongOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-             />
+          
             <Item
               to={'/line'}
               title={'Line Chart'}
@@ -159,20 +177,6 @@ const SideBar = () => {
               to={'/pie'}
               title={'Pie Chart'}
               icon={<PieChartOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-             />
-            <Item
-              to={'/calendar'}
-              title={'Calendar'}
-              icon={<CalendarMonthOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-             />
-            <Item
-              to={'/faq'}
-              title={'FAQ'}
-              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
              />
