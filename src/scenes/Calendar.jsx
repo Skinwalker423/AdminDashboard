@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
+import {Box, Typography} from '@mui/material'
 
 const Calendar = () => {
   return (
-    <div>Calendar</div>
+    <Box>
+      <FullCalendar
+        plugins={[ dayGridPlugin ]}
+        initialView="dayGridMonth"
+      />
+    </Box>
   )
 }
 
