@@ -1,8 +1,16 @@
 import React from 'react'
+import {Box} from '@mui/material'
+import Header from '../components/Header'
+import LineChart from '../components/LineChart'
 
 const Line = () => {
   return (
-    <div>Line</div>
+    <Box m='20px'>
+      <Header title='Pie Chart' subTitle='Sales for x represented by a pie chart' />
+      <Box height={'75vh'}>
+        <LineChart />
+      </Box>
+    </Box>
   )
 }
 
