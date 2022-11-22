@@ -22,16 +22,16 @@ const Item = ({title, to, icon, selected, setSelected}) => {
   const colors = tokens(palette.mode);
 
   return (
-    <MenuItem 
-      active={selected === title}
-      onClick={() => setSelected(title)}
-      icon={icon}
-      
-    >
-      <NavLink style={{ textDecoration: 'none'}} to={to}>
-        <Typography color={selected === title ? "#6870fa" : colors.primary[300]}>{title}</Typography>
-      </NavLink>
-    </MenuItem>
+    <NavLink style={{ textDecoration: 'none', color: colors.primary[200]}} to={to}>
+      <MenuItem 
+        active={selected === title}
+        onClick={() => setSelected(title)}
+        icon={icon}  
+      >
+        <Typography color={selected === title ? "#6870fa" : ""}>{title}
+        </Typography>
+      </MenuItem>
+    </NavLink>
   )
 }
 
@@ -53,12 +53,6 @@ const SideBar = () => {
         },
         "& .menu-item:hover": {
           color: "#6870fa !important",      
-        },
-        "& .menu-item a p:hover": {
-          color: "#6870fa",      
-        },
-        "& .menuitem-anchor-test-id:hover": {
-          color: "#6870fa !important",       
         },
         "& .menu-item.active": {
           color: "#6870fa !important",

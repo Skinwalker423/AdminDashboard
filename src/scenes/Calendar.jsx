@@ -87,11 +87,11 @@ const Calendar = () => {
         <Box flex='1 1 100%' ml='20px'>
           <FullCalendar
             height={'80vh'}
-            plugins={[dayGridPlugin,timeGridPlugin,listPlugin,interactionPlugin]}
+            plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
             headerToolbar={{
               left: 'prev,next today',
               center: 'title',
-              right: "dayGridPlugin,timeGridPlugin,listPlugin,interactionPlugin"
+              right: "dayGridMonth,timeGridWeek,listWeek,dayGridWeek",
             }}
             initialView="dayGridMonth"
             editable={true}
