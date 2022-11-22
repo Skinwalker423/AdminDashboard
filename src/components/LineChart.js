@@ -4,7 +4,7 @@ import { mockLineData } from '../data/mockData'
 import { useTheme } from '@mui/material'
 import { tokens } from '../theme'
 
-const LineChart = ({isDashBoard}) => {
+const LineChart = ({isDashBoard = false}) => {
 
   const {palette} = useTheme();
   const colors = tokens(palette.mode);
