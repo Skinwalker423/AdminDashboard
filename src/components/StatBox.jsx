@@ -23,13 +23,6 @@ const StatBox = ({title, subTitle, icon, progress, increase}) => {
                  >
                     {title}
                 </Typography>
-            </Box>
-            <Box>
-                <ProgressCircle
-                    progress={progress}
-                 />
-            </Box>
-            <Box display='flex' justifyContent='space-between'>          
                 <Typography
                     variant='h5'
                     sx={{
@@ -38,6 +31,11 @@ const StatBox = ({title, subTitle, icon, progress, increase}) => {
                     >
                     {subTitle}
                 </Typography>
+            </Box>
+            <Box display='flex' flexDirection={'column'} justifyContent='space-between'>             
+                <ProgressCircle
+                    progress={progress}
+                 />
                 <Typography
                     variant='h5'
                     fontStyle='italic'

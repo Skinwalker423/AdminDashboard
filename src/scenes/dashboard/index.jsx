@@ -46,6 +46,8 @@ const Dashboard = () => {
           </Button>
         </Box>
       </Box>
+
+      {/* ROW 1 */}
       <Box 
         display='grid'
         gridTemplateColumns={'repeat(12, 1fr)'}
@@ -123,6 +125,51 @@ const Dashboard = () => {
               fontSize: '26px'
             }} />}
           />
+        </Box>
+
+        {/* ROW 2 */}
+      <Box 
+        gridColumn='span 8'
+        gridRow='span 2'
+        backgroundColor={colors.primary[400]}
+      >
+        <Box 
+          mt='25px'
+          p='0 30px'
+          display='flex'
+          justifyContent='space-between'
+          alignItems='center'
+        >
+          <Box>
+            <Typography
+              variant='h5'
+              fontWeight='600'
+              color={colors.gray[100]}
+            >
+              Revenue Generated
+            </Typography>
+            <Typography
+              variant='h5'
+              fontWeight='600'
+              color={colors.greenAccent[500]}
+            >
+              $59,342.32
+            </Typography>
+          </Box>
+          <Box>
+            <IconButton>
+              <DownloadOutlinedIcon
+                sx={{
+                  fontSize: '26px',
+                  color: colors.greenAccent[500]
+                }}
+               />
+            </IconButton>
+          </Box>  
+        </Box>
+          <Box height='250px' ml='-20px'>
+            <LineChart isDashBoard={true} />
+          </Box>
         </Box>
       </Box>
     </Box>
