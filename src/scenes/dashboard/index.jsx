@@ -26,10 +26,14 @@ const Dashboard = () => {
 
   return (
     <Box m='20px'>
-      <Box display='flex' justifyContent={'space-between'}>
+      <Box 
+        display='flex' 
+        justifyContent={'space-between'} 
+        alignItems='center'
+      >
         <Header 
           title='DASHBOARD'
-          subTitle='subtitle'
+          subTitle='Snapshots of business data'
         />
         <Box>
           <Button
@@ -52,7 +56,8 @@ const Dashboard = () => {
         display='grid'
         gridTemplateColumns={'repeat(12, 1fr)'}
         gridAutoRows='140px'
-        gap='20px'
+        mt='20px'
+        gap='15px'
       >
         <Box 
           backgroundColor={colors.primary[400]} 
@@ -235,6 +240,63 @@ const Dashboard = () => {
                 </Box>
               )
             })}
+          </Box>
+
+          {/* ROW 3 */}
+            
+          <Box 
+            gridColumn='span 4'
+            gridRow='span 2'
+            backgroundColor={colors.primary[400]}
+            p='30px'
+          >
+            <Typography>
+              Campaign
+            </Typography>
+            <Box 
+              display='flex'
+              flexDirection='column'
+              justifyContent='center'
+              alignItems='center'
+              pt='30px'
+            >
+              <ProgressCircle size='140' isDashBoard={true}  />
+              <Typography sx={{pt: '15px', color: colors.greenAccent[500]}}>
+                $48,352 Revenue generated
+              </Typography>
+              <Typography>
+                Includes extra misc expenses
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box 
+            gridColumn='span 4'
+            gridRow='span 2'
+            backgroundColor={colors.primary[400]}
+            p='30px'
+          >
+            <Box>
+              <Typography>
+                Sales Quantity
+              </Typography>
+              <Box height='250px'>
+                <BarChart />
+              </Box>
+            </Box>
+          </Box>
+          <Box 
+            gridColumn='span 4'
+            gridRow='span 2'
+            backgroundColor={colors.primary[400]}
+            p='30px'
+          >
+            <Typography>
+              Geography Based Traffic
+            </Typography>
+            <Box height='225px'>
+              <GeoChart isDashBoard={true} />
+            </Box>
           </Box>
       </Box>
     </Box>

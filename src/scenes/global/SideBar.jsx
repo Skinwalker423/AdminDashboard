@@ -65,7 +65,7 @@ const SideBar = () => {
         <Menu>
           {isDislayed && (
           <Box>
-            <Box display='flex' justifyContent={collapsed ? 'flex-end' : 'space-between'} align-Items='center'>
+            <Box display='flex' justifyContent={collapsed ? 'center' : 'space-between'} align-Items='center'>
               {!collapsed && <Typography variant='h3' sx={{mt: '3px'}} >
                 Admins
               </Typography>}
@@ -77,8 +77,8 @@ const SideBar = () => {
               <img
                 src='./favicon.ico'
                 alt='profile-user'
-                width='75px'
-                height='75px'
+                width={collapsed ? '50px' : '75px'}
+                height={collapsed ? '50px' : '75px'}
                 style={{cursor: 'pointer', borderRadius: '50%'}}
               />
             </Box>
