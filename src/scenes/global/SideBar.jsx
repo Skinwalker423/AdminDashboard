@@ -22,11 +22,11 @@ const Item = ({title, to, icon, selected, setSelected}) => {
   const colors = tokens(palette.mode);
 
   return (
-    <NavLink style={{ textDecoration: 'none', color: colors.primary[200]}} to={to}>
+    <NavLink style={{textDecoration: 'none', color: colors.primary[200]}} to={to}>
       <MenuItem 
         active={selected === title}
         onClick={() => setSelected(title)}
-        icon={icon}  
+        icon={icon} 
       >
         <Typography color={selected === title ? "#6870fa" : ""}>{title}
         </Typography>
@@ -65,7 +65,10 @@ const SideBar = () => {
         <Menu>
           {isDislayed && (
           <Box>
-            <Box display='flex' justifyContent={'flex-end'}>
+            <Box display='flex' justifyContent={collapsed ? 'center' : 'space-between'} align-Items='center'>
+              {!collapsed && <Typography variant='h3' sx={{mt: '3px'}} >
+                Admins
+              </Typography>}
               <IconButton onClick={() => collapseSidebar()}>
                 <MenuOutlinedIcon />
               </IconButton>
@@ -74,8 +77,8 @@ const SideBar = () => {
               <img
                 src='./favicon.ico'
                 alt='profile-user'
-                width='75px'
-                height='75px'
+                width={collapsed ? '50px' : '75px'}
+                height={collapsed ? '50px' : '75px'}
                 style={{cursor: 'pointer', borderRadius: '50%'}}
               />
             </Box>
@@ -88,7 +91,11 @@ const SideBar = () => {
               >
                 Skinwalker
               </Typography>
-              <Typography>
+              <Typography
+                variant='h4' 
+                color={colors.greenAccent[600]}
+                sx={{mb: '30px'}}
+              >
                 Admin 
               </Typography>
             </Box>}
@@ -103,7 +110,7 @@ const SideBar = () => {
               setSelected={setSelected}
 
              />
-            <Typography sx={{m: '10px 0 10px 20px'}} color={colors.gray[400]}>Data</Typography>
+            <Typography sx={{m: '20px 0 10px 20px'}} color={colors.gray[400]}>Data</Typography>
             <Item
               to={'/team'}
               title={'Manage Team'}
