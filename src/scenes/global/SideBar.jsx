@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Sidebar, Menu, MenuItem,useProSidebar, } from 'react-pro-sidebar';
+import {Sidebar, Menu, MenuItem,useProSidebar } from 'react-pro-sidebar';
 import {Box, IconButton, Typography, useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { tokens } from '../../theme';
@@ -15,6 +15,7 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import { Link } from 'react-router-dom';
 
 const Item = ({title, to, icon, selected, setSelected}) => {
 
@@ -22,16 +23,17 @@ const Item = ({title, to, icon, selected, setSelected}) => {
   const colors = tokens(palette.mode);
 
   return (
-    <NavLink style={{textDecoration: 'none', color: colors.primary[200]}} to={to}>
+    <Link style={{textDecoration: 'none', color: colors.primary[200]}} to={to}>
       <MenuItem 
         active={selected === title}
         onClick={() => setSelected(title)}
         icon={icon} 
       >
-        <Typography color={selected === title ? "#6870fa" : ""}>{title}
+        <Typography color={selected === title ? "#6870fa" : ""}>
+          {title}
         </Typography>
       </MenuItem>
-    </NavLink>
+    </Link>
   )
 }
 
@@ -65,7 +67,7 @@ const SideBar = () => {
         <Menu>
           {isDislayed && (
           <Box>
-            <Box display='flex' justifyContent={collapsed ? 'center' : 'space-between'} align-Items='center'>
+            <Box display='flex' justifyContent={collapsed ? 'center' : 'space-between'} alignItems='center'>
               {!collapsed && <Typography variant='h3' sx={{mt: '3px'}} >
                 Admins
               </Typography>}
