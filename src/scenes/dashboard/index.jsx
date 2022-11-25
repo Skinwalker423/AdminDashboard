@@ -21,6 +21,8 @@ import StatsSnapShotRow from '../../components/StatsSnapShotRow';
 import RevenueGenerated from '../../components/RevenueGenerated';
 import TransactionsRow from '../../components/TransactionsRow';
 import Campaign from '../../components/Campaign';
+import Sales from '../../components/Sales';
+import GeoTraffic from '../../components/GeoTraffic';
 
 
 const Dashboard = () => {
@@ -55,7 +57,6 @@ const Dashboard = () => {
         </Box>
       </Box>
 
-      {/* ROW 1 */}
       <Box 
         display='grid'
         gridTemplateColumns={'repeat(12, 1fr)'}
@@ -63,117 +64,61 @@ const Dashboard = () => {
         mt='20px'
         gap='15px'
       >
-        <Box 
-          backgroundColor={colors.primary[400]} 
-          display='flex'
-          gridColumn={'span 3'}
-          justifyContent='center'
-          alignItems='center'
-        >
-          <StatBox
-            title={'12,361'}
-            subTitle={'Emails Sent'}
-            progress={0.75}
-            increase={'+14%'}
-            icon={<EmailOutlinedIcon sx={{
-              color: colors.greenAccent[600],
-              fontSize: '26px'
-            }} />}
-          />
-        </Box>
-        <Box 
-          backgroundColor={colors.primary[400]} 
-          display='flex'
-          gridColumn={'span 3'}
-          justifyContent='center'
-          alignItems='center'
-        >
-          <StatBox
-            title={'32,441'}
-            subTitle={'New Clients'}
-            progress={0.30}
-            increase={'+58%'}
-            icon={<PersonAddAlt1OutlinedIcon sx={{
-              color: colors.greenAccent[600],
-              fontSize: '26px'
-            }} />}
-          />
-        </Box>
-        <Box 
-          backgroundColor={colors.primary[400]} 
-          display='flex'
-          gridColumn={'span 3'}
-          justifyContent='center'
-          alignItems='center'
-        >
-          <StatBox
-            title={'431,225'}
-            subTitle={'Sales Obtained'}
-            progress={0.50}
-            increase={'+25%'}
-            icon={<PointOfSaleOutlinedIcon sx={{
-              color: colors.greenAccent[600],
-              fontSize: '26px'
-            }} />}
-          />
-        </Box>
-        <Box 
-          backgroundColor={colors.primary[400]} 
-          display='flex'
-          gridColumn={'span 3'}
-          justifyContent='center'
-          alignItems='center'
-        >
-          <StatBox
-            title={'1,325,134'}
-            subTitle={'Traffic Inbound'}
-            progress={0.80}
-            increase={'+43%'}
-            icon={<TrafficOutlinedIcon sx={{
-              color: colors.greenAccent[600],
-              fontSize: '26px'
-            }} />}
-          />
-        </Box>
+
+        {/* ROW 1 */}
+
+        <StatBox
+          title={'12,361'}
+          subTitle={'Emails Sent'}
+          progress={0.75}
+          increase={'+14%'}
+          icon={<EmailOutlinedIcon sx={{
+            color: colors.greenAccent[600],
+            fontSize: '26px'
+          }} />}
+        />
+        <StatBox
+          title={'32,441'}
+          subTitle={'New Clients'}
+          progress={0.30}
+          increase={'+58%'}
+          icon={<PersonAddAlt1OutlinedIcon sx={{
+            color: colors.greenAccent[600],
+            fontSize: '26px'
+          }} />}
+        />
+        <StatBox
+          title={'431,225'}
+          subTitle={'Sales Obtained'}
+          progress={0.50}
+          increase={'+25%'}
+          icon={<PointOfSaleOutlinedIcon sx={{
+            color: colors.greenAccent[600],
+            fontSize: '26px'
+          }} />}
+        />
+        <StatBox
+          title={'1,325,134'}
+          subTitle={'Traffic Inbound'}
+          progress={0.80}
+          increase={'+43%'}
+          icon={<TrafficOutlinedIcon sx={{
+            color: colors.greenAccent[600],
+            fontSize: '26px'
+          }} />}
+        />
 
         {/* ROW 2 */}
 
         <RevenueGenerated />
         <TransactionsRow />
           
-
           {/* ROW 3 */}
             
         <Campaign />
+        <Sales />
+        <GeoTraffic />
 
-          <Box 
-            gridColumn='span 4'
-            gridRow='span 2'
-            backgroundColor={colors.primary[400]}
-            p='30px'
-          >
-            <Box>
-              <Typography>
-                Sales Quantity
-              </Typography>
-              <Box height='250px'>
-                <BarChart />
-              </Box>
-            </Box>
-          </Box>
-          <Box 
-            gridColumn='span 4'
-            gridRow='span 2'
-            backgroundColor={colors.primary[400]}
-            p='30px'
-          >
-            <Typography>
-              Geography Based Traffic
-            </Typography>
-            <Box height='225px'>
-              <GeoChart isDashBoard={true} />
-            </Box>
-          </Box>
       </Box>
     </Box>
   )
