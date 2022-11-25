@@ -20,6 +20,7 @@ import { mockTransactions } from '../../data/mockData';
 import StatsSnapShotRow from '../../components/StatsSnapShotRow';
 import RevenueGenerated from '../../components/RevenueGenerated';
 import TransactionsRow from '../../components/TransactionsRow';
+import Campaign from '../../components/Campaign';
 
 
 const Dashboard = () => {
@@ -136,38 +137,14 @@ const Dashboard = () => {
         </Box>
 
         {/* ROW 2 */}
+
         <RevenueGenerated />
-        {/* Transactions */}
         <TransactionsRow />
           
 
           {/* ROW 3 */}
             
-          <Box 
-            gridColumn='span 4'
-            gridRow='span 2'
-            backgroundColor={colors.primary[400]}
-            p='30px'
-          >
-            <Typography>
-              Campaign
-            </Typography>
-            <Box 
-              display='flex'
-              flexDirection='column'
-              justifyContent='center'
-              alignItems='center'
-              pt='30px'
-            >
-              <ProgressCircle size='140' isDashBoard={true}  />
-              <Typography sx={{pt: '15px', color: colors.greenAccent[500]}}>
-                $48,352 Revenue generated
-              </Typography>
-              <Typography>
-                Includes extra misc expenses
-              </Typography>
-            </Box>
-          </Box>
+        <Campaign />
 
           <Box 
             gridColumn='span 4'
