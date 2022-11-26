@@ -2,14 +2,13 @@ import React from 'react'
 import { ResponsiveChoropleth } from '@nivo/geo'
 import { mockGeographyData } from '../data/mockData'
 import { geoFeatures } from '../data/mockGeoFeatures'
-import { useTheme } from '@mui/material'
-import { tokens } from '../theme'
+
+import { useColors } from '../hooks'
 
 const GeoChart = ({isDashBoard = false}) => {
 
-    const {palette} = useTheme();
-    const colors = tokens(palette.mode);
-
+    const {colors} = useColors();
+    
   return (
     <ResponsiveChoropleth
         data={mockGeographyData}

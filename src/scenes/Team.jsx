@@ -1,7 +1,7 @@
 import React from 'react'
-import {Box, Typography, useTheme, Button, IconButton } from '@mui/material';
+import {Box, Typography, Button, IconButton } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { tokens } from '../theme';
+
 import { mockDataTeam } from '../data/mockData';
 import Header from '../components/Header';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
@@ -10,15 +10,14 @@ import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccount
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
-
+import { useColors } from '../hooks';
 
 
 
 
 const Team = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   const rows = mockDataTeam;
 

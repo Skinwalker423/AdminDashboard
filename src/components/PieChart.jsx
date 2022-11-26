@@ -1,14 +1,12 @@
 import React from 'react'
 import {ResponsivePie} from '@nivo/pie'
 import { mockPieData } from '../data/mockData'
-import { useTheme } from '@mui/material'
-import { tokens } from '../theme'
+import { useColors } from '../hooks'
 
 
 const PieChart = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <ResponsivePie
@@ -91,38 +89,7 @@ const PieChart = () => {
                 spacing: 10
             }
         ]}
-        // fill={[
-        //     {
-        //         match: {
-        //             id: 'hack'
-        //         },
-        //         id: 'dots'
-        //     },
-        //     {
-        //         match: {
-        //             id: 'make'
-        //         },
-        //         id: 'dots'
-        //     },
-        //     {
-        //         match: {
-        //             id: 'go'
-        //         },
-        //         id: 'dots'
-        //     },
-        //     {
-        //         match: {
-        //             id: 'lisp'
-        //         },
-        //         id: 'dots'
-        //     },
-        //     {
-        //         match: {
-        //             id: 'scala'
-        //         },
-        //         id: 'line'
-        //     },
-        // ]}
+       
         legends={[
             {
                 anchor: 'bottom',

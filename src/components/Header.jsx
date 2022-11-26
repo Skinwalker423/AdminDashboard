@@ -1,10 +1,9 @@
-import {Typography, Box, useTheme} from '@mui/material';
-import { tokens } from '../theme';
+import {Typography, Box} from '@mui/material';
+import { useColors } from '../hooks';
 
 const Header = ({title, subTitle}) => {
-
-    const {palette} = useTheme();
-    const colors = tokens(palette.mode);
+ 
+    const {colors} = useColors();
 
     return (
         <Box>

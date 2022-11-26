@@ -5,16 +5,15 @@ import {
   AccordionDetails, 
   Box, 
   Typography,
-  useTheme,
 } from '@mui/material'
-import { tokens } from '../theme'
+
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Header from '../components/Header';
+import { useColors } from '../hooks';
 
 const FAQ = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Box m='20px'>

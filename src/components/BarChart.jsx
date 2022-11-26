@@ -1,13 +1,13 @@
 import React from 'react'
-import { useTheme } from '@mui/material'
 import { ResponsiveBar } from '@nivo/bar'
 import { mockBarData } from '../data/mockData'
-import { tokens } from '../theme'
+
+import { useColors } from '../hooks'
+
 
 const BarChart = ({isDashBoard = false}) => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <ResponsiveBar

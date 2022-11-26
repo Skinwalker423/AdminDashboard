@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, useTheme } from '@mui/material'
-import { tokens } from '../theme'
+import { Box } from '@mui/material'
+import { useColors } from '../hooks';
+
 
 const ProgressCircle = ({progress = 0.75, size = '40'}) => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
   const angle = progress * 360;
 
   return (

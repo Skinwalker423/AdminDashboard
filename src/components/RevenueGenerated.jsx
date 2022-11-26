@@ -1,14 +1,13 @@
 import React from 'react'
-import {Box, IconButton,Typography, useTheme} from '@mui/material';
+import {Box, IconButton,Typography} from '@mui/material';
 import LineChart from './LineChart';
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
-import { tokens } from '../theme';
+import { useColors } from '../hooks';
 
 
 const RevenueGenerated = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Box 
