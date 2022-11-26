@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {Sidebar, Menu, MenuItem,useProSidebar } from 'react-pro-sidebar';
 import {Box, IconButton, Typography, useTheme } from '@mui/material';
-import { NavLink } from 'react-router-dom';
-import { tokens } from '../../theme';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
@@ -16,11 +14,11 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Link } from 'react-router-dom';
+import { useColors } from '../../hooks';
 
 const Item = ({title, to, icon, selected, setSelected}) => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Link style={{textDecoration: 'none', color: colors.primary[200]}} to={to}>
@@ -40,8 +38,8 @@ const Item = ({title, to, icon, selected, setSelected}) => {
 
 const SideBar = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
+
   const [isDislayed, setIsDisplayed] = useState(true);
   const [selected, setSelected] = useState('Dashboard');
   const { collapseSidebar, collapsed} = useProSidebar();

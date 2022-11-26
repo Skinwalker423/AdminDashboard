@@ -1,14 +1,12 @@
 import React from 'react'
-import {Box, Typography, useTheme} from '@mui/material';
-import { tokens } from '../theme';
+import {Box, Typography} from '@mui/material';
 import { mockTransactions } from '../data/mockData';
-
+import { useColors } from '../hooks';
 
 
 const TransactionsRow = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
 
   return (

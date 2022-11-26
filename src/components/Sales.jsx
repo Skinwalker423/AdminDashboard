@@ -1,14 +1,11 @@
 import React from 'react'
-import {Box, Typography, useTheme} from '@mui/material';
-import { tokens } from '../theme';
+import {Box, Typography} from '@mui/material';
+import { useColors } from '../hooks';
 import BarChart from './BarChart';
-
-
 
 const Sales = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Box 

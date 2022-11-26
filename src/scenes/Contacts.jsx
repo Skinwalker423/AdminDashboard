@@ -1,9 +1,9 @@
 import React from 'react'
-import {Box, useTheme } from '@mui/material';
+import {Box} from '@mui/material';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { tokens } from '../theme';
 import { mockDataContacts } from '../data/mockData';
 import Header from '../components/Header';
+import { useColors } from '../hooks';
 
 
 
@@ -12,8 +12,7 @@ import Header from '../components/Header';
 
 const Contacts = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   const rows = mockDataContacts;
 

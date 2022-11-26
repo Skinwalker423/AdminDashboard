@@ -10,15 +10,14 @@ import {
   List, 
   ListItem, 
   ListItemText, 
-  useTheme
 } from '@mui/material'
 import Header from '../components/Header'
-import { tokens } from '../theme'
+
+import { useColors } from '../hooks'
 
 const Calendar = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors, palette} = useColors();
   const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {

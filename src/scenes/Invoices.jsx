@@ -1,15 +1,15 @@
 import React from 'react'
 import {Box, useTheme, Typography } from '@mui/material';
-import { DataGrid, GridToolbar, Check } from '@mui/x-data-grid';
-import { tokens } from '../theme';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+
 import { mockDataInvoices } from '../data/mockData';
 import Header from '../components/Header';
+import { useColors } from '../hooks';
 
 
 const Invoices = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   const rows = mockDataInvoices;
 

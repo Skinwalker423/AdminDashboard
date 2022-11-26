@@ -1,9 +1,9 @@
 import React from 'react'
-import {Box, Button, TextField, useMediaQuery, useTheme} from '@mui/material';
+import {Box, Button, TextField, useMediaQuery} from '@mui/material';
 import { Formik } from 'formik';
 import Header from '../components/Header';
 import * as yup from 'yup';
-import { tokens } from '../theme';
+import { useColors } from '../hooks';
 
 
   const phoneRegEx = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
@@ -33,8 +33,7 @@ import { tokens } from '../theme';
 
 const Form = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   const isNotMobile = useMediaQuery("(min-width: 600px)");
 

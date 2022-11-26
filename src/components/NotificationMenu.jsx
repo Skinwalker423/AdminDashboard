@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, Typography, useTheme } from '@mui/material'
-import { tokens } from '../theme'
+import { Box } from '@mui/material'
+import { useColors } from '../hooks';
+import NotificationItem from './NotificationItem';
 
 const NotificationMenu = () => {
 
-	const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Box
@@ -20,70 +20,15 @@ const NotificationMenu = () => {
 			backgroundColor={colors.greenAccent[700]}
 			borderRadius='4px'
     >
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 1
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
-			<Box>
-				<Typography color={colors.gray[100]}>
-					message 2
-				</Typography>
-				<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
-				</Typography>
-			</Box>
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />
+		<NotificationItem />	
     </Box>
   )
 }

@@ -1,13 +1,11 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
 import { mockLineData } from '../data/mockData'
-import { useTheme } from '@mui/material'
-import { tokens } from '../theme'
+import { useColors } from '../hooks'
 
 const LineChart = ({isDashBoard = false}) => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <ResponsiveLine

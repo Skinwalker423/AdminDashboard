@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, IconButton, Button, Typography, useTheme} from '@mui/material';
+import {Box, Button} from '@mui/material';
 
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -8,27 +8,20 @@ import PersonAddAlt1OutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined
 import TrafficOutlinedIcon from '@mui/icons-material/TrafficOutlined';
 
 import Header from '../../components/Header';
-import GeoChart from '../../components/GeoChart';
-import BarChart from '../../components/BarChart';
-import LineChart from '../../components/LineChart';
-import PieChart from '../../components/PieChart';
-import ProgressCircle from '../../components/ProgressCircle';
 import StatBox from '../../components/StatBox';
 
-import { tokens } from '../../theme';
-import { mockTransactions } from '../../data/mockData';
-import StatsSnapShotRow from '../../components/StatsSnapShotRow';
 import RevenueGenerated from '../../components/RevenueGenerated';
 import TransactionsRow from '../../components/TransactionsRow';
 import Campaign from '../../components/Campaign';
 import Sales from '../../components/Sales';
 import GeoTraffic from '../../components/GeoTraffic';
+import { useColors } from '../../hooks';
 
 
 const Dashboard = () => {
 
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
+
 
   return (
     <Box m='20px'>

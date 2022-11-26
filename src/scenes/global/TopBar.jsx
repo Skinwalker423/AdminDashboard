@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
-import {Box, IconButton, useTheme, InputBase} from '@mui/material';
-import { ColorModeContext, tokens } from '../../theme';
+import {Box, IconButton, InputBase} from '@mui/material';
+import { ColorModeContext } from '../../theme';
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import NightlightRoundOutlinedIcon from '@mui/icons-material/NightlightRoundOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
@@ -9,13 +9,13 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NotificationMenu from '../../components/NotificationMenu';
 
+import { useColors } from '../../hooks';
+
 
 const TopBar = () => {
 
   const {toggleColorMode} = useContext(ColorModeContext);
-  const {palette} = useTheme();
-  console.log(palette.mode);
-  const colors = tokens(palette.mode);
+  const {colors, palette} = useColors();
 
   const [notificationMenu, setNotificationMenu] = useState(false)
 

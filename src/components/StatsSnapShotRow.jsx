@@ -3,15 +3,14 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PointOfSaleOutlinedIcon from '@mui/icons-material/PointOfSaleOutlined';
 import PersonAddAlt1OutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined';
 import TrafficOutlinedIcon from '@mui/icons-material/TrafficOutlined';
+import { useColors } from '../hooks';
+import { Box } from '@mui/material'
 
-import { Box, useTheme } from '@mui/material'
-import { tokens } from '../theme';
 
 
 const StatsSnapShotRow = () => {
  
-  const {palette} = useTheme();
-  const colors = tokens(palette.mode);
+  const {colors} = useColors();
 
   return (
     <Box>
