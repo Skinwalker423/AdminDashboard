@@ -1,20 +1,31 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { useColors } from '../hooks';
+import { Link } from 'react-router-dom';
 
-const NotificationItem = () => {
+
+const NotificationItem = ({message, name, email, date, id}) => {
 
   const {colors} = useColors();
 
+
   return (
-    <Box m='10px'>
+	<Link to={`/messages/${id}`}>
+		<Box m='10px'>
+			<Box>
 			<Typography color={colors.gray[100]}>
-					message 1
+				{`From: ${name}`}
 			</Typography>
+			<Typography color={colors.gray[100]}>
+				{date}
+			</Typography>
+
+			</Box>
 			<Typography>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, eaque unde aspernatur corrupti quidem illo cum provident nemo autem! Vero impedit enim vitae facere, consequuntur numquam adipisci atque blanditiis!
+				{message}
 			</Typography>
 		</Box>
+	</Link>
   )
 }
 
