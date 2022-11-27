@@ -266,6 +266,66 @@ export const mockDataInvoices = [
   },
 ];
 
+export const mockDataMessages = [
+  {
+    id: 1,
+    name: "Jon Snow",
+    email: "jonsnow@gmail.com",
+    message: "Yo!",
+    date: "03/12/2022",
+  },
+  {
+    id: 2,
+    name: "Cersei Lannister",
+    email: "cerseilannister@gmail.com",
+    message: "Hey, how are you?",
+    date: "06/15/2021",
+  },
+  {
+    id: 3,
+    name: "Jaime Lannister",
+    email: "jaimelannister@gmail.com",
+    message: "We need to chat",
+    date: "05/02/2022",
+  },
+  {
+    id: 4,
+    name: "Anya Stark",
+    email: "anyastark@gmail.com",
+    message: "I need the sales report now",
+    date: "03/21/2022",
+  },
+  {
+    id: 5,
+    name: "Daenerys Targaryen",
+    email: "daenerystargaryen@gmail.com",
+    message: "meeting in 5",
+    date: "01/12/2021",
+  },
+  {
+    id: 6,
+    name: "Ever Melisandre",
+    email: "evermelisandre@gmail.com",
+    message: " I need a favor",
+    date: "11/02/2022",
+  },
+  {
+    id: 7,
+    name: "Ferrara Clifford",
+    email: "ferraraclifford@gmail.com",
+    message: "Are you busy?",
+    date: "02/11/2022",
+  },
+  {
+    id: 8,
+    name: "Rossini Frances",
+    email: "rossinifrances@gmail.com",
+    message: "Up for lunch?",
+    date: "05/02/2021",
+  },
+];
+
+
 export const mockTransactions = [
   {
     txId: "01e4dsa",
