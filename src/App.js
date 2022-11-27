@@ -14,6 +14,8 @@ import Line from "./scenes/Line";
 import Pie from "./scenes/Pie";
 import Team from "./scenes/Team";
 import Calendar from "./scenes/Calendar";
+import Messages from "./scenes/messages/Messages";
+import Message from "./scenes/messages/Message";
 
 
 function App() {
@@ -48,6 +50,9 @@ function App() {
               <Route path="/line" element={<Line />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/calendar" element={<Calendar />} />
+              <Route path="/messages" element={<Messages />}>
+                <Route path=":id" element={<Message />} />
+              </Route>
             </Routes>
               </div>
             </div>
