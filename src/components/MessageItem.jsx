@@ -36,11 +36,24 @@ const MessageItem = ({name, email, date, message, id}) => {
             mt: '20px',
             height: '3rem',
             borderRadius: '4px',
+            '& :hover': {
+                backgroundColor: colors.greenAccent[600],
+                color: colors.gray[100],
+            }
             }}>
-            <ReplyOutlinedIcon />
-            <Typography>
-                Reply
-            </Typography>
+            <Box
+                display='flex'
+                height='100%'
+                width='100%'
+                justifyContent='center'
+                alignItems='center'
+                borderRadius='4px'
+            >
+                <ReplyOutlinedIcon />
+                <Typography>
+                    Reply
+                </Typography>
+            </Box>
         </Box>
        
     </Box>
