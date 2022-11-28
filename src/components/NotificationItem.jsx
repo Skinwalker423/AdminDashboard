@@ -10,22 +10,35 @@ const NotificationItem = ({message, name, email, date, id}) => {
 
 
   return (
-	<Link to={`/messages/${id}`}>
-		<Box m='10px'>
+	<Box m='10px' 
+			borderBottom={`2px solid ${colors.greenAccent[100]}`}
+			borderRadius='4px'
+			sx={{
+				'& .MuiBox-root:hover': {
+					backgroundColor: colors.greenAccent[100],
+				}
+			}}
+		>
+		<Link to={`/messages/${id}`} style={{
+			textDecoration: 'none',
+		}}>
 			<Box>
-			<Typography color={colors.gray[100]}>
-				{`From: ${name}`}
-			</Typography>
-			<Typography color={colors.gray[100]}>
-				{date}
-			</Typography>
-
+				<Box>
+					<Typography color={colors.greenAccent[600]}>
+						{`From: ${name}`}
+					</Typography>
+					<Typography color={colors.primary[400]}>
+						{date}
+					</Typography>
+				</Box>
+				<Box>
+					<Typography color={colors.primary[400]}>
+						{message}
+					</Typography>
+				</Box>
 			</Box>
-			<Typography>
-				{message}
-			</Typography>
-		</Box>
-	</Link>
+		</Link>
+	</Box>
   )
 }
 
