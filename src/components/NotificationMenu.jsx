@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Menu, MenuItem } from '@mui/material'
 import { useColors } from '../hooks';
 import NotificationItem from './NotificationItem';
 import { mockDataMessages } from '../data/mockData';
@@ -18,19 +18,21 @@ const NotificationMenu = () => {
 			overflow='auto'
 			border='2px solid white'
 			zIndex={99}
-			backgroundColor={colors.greenAccent[700]}
+			backgroundColor={'white'}
 			borderRadius='4px'
     >
+		
 		{mockDataMessages.map(({id, name, email, message, date}) => {
 			return (
-				<NotificationItem
-					key={id}
-					id={id}
-					name={name}
-					email={email}
-					message={message}
-					date={date}
-				 />
+					<NotificationItem
+						key={id}
+						id={id}
+						name={name}
+						email={email}
+						message={message}
+						date={date}
+					/>
+				
 			)
 		})}
     </Box>
