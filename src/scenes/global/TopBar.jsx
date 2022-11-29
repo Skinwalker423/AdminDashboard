@@ -8,6 +8,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';import Setting
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NotificationMenu from '../../components/NotificationMenu';
+import Settings from '../settings/Settings';
 
 import { useColors } from '../../hooks';
 
@@ -17,7 +18,8 @@ const TopBar = () => {
   const {toggleColorMode} = useContext(ColorModeContext);
   const {colors, palette} = useColors();
 
-  const [notificationMenu, setNotificationMenu] = useState(false)
+  const [notificationMenu, setNotificationMenu] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const handleDarkModeButton = () => {
     toggleColorMode();
@@ -25,6 +27,10 @@ const TopBar = () => {
 
   const handleNotificationsButton = () => {
     setNotificationMenu((bool) => !bool);
+  }
+
+  const handleSettingsButton = () => {
+    setShowSettings((bool) => !bool);
   }
 
 
@@ -50,11 +56,12 @@ const TopBar = () => {
           <IconButton>
             <PersonOutlineOutlinedIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={handleSettingsButton}>
             <SettingsOutlinedIcon />
           </IconButton>
         </Box>
         {notificationMenu && <NotificationMenu />}
+        {showSettings && <Settings />}
       </Box>
     
   )
