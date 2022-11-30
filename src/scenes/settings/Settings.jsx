@@ -1,7 +1,8 @@
 import React from 'react'
-import{Box, Typography, IconButton} from '@mui/material'
+import{Box} from '@mui/material'
 import { useColors } from '../../hooks'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import SettingsItem from '../../components/SettingsItem';
 
 
 const Settings = () => {
@@ -25,61 +26,10 @@ const Settings = () => {
             
         }}
     >
-        <Box 
-            borderBottom={'2px solid white'}
-            m='20px'
-            display='flex'
-            justifyContent={'space-between'}
-            alignItems={'center'}
-            
-        >
-            <Typography
-                color={colors.gray[100]}
-                variant={'h4'}
-                
-            >
-                Profile
-            </Typography>
-            <IconButton>
-                <PersonOutlineOutlinedIcon />
-            </IconButton>
-        </Box>
-        <Box 
-            borderBottom={'2px solid white'}
-            m='20px'
-            display='flex'
-            justifyContent={'space-between'}
-            alignItems={'center'}
-        >
-            <Typography
-                color={colors.gray[100]}
-                variant={'h4'}
-                
-            >
-                Profile
-            </Typography>
-            <IconButton>
-                <PersonOutlineOutlinedIcon />
-            </IconButton>
-        </Box>
-        <Box 
-            borderBottom={'2px solid white'}
-            m='20px'
-            display='flex'
-            justifyContent={'space-between'}
-            alignItems={'center'}
-        >
-            <Typography
-                color={colors.gray[100]}
-                variant={'h4'}
-                
-            >
-                Profile
-            </Typography>
-            <IconButton>
-                <PersonOutlineOutlinedIcon />
-            </IconButton>
-        </Box>
+        <SettingsItem
+            title='Profile'
+            icon={<PersonOutlineOutlinedIcon />}
+        />
     </Box>
   )
 }
