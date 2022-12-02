@@ -3,6 +3,10 @@ import { Box } from '@mui/material'
 import { useColors } from '../../hooks'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import SettingsItem from '../../components/SettingsItem';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 
 const Settings = () => {
@@ -27,20 +31,24 @@ const Settings = () => {
             }}
         >
             <SettingsItem
-                title='Profile'
+                title='User Profile'
                 icon={<PersonOutlineOutlinedIcon />}
             />
             <SettingsItem
-                title='Profile'
-                icon={<PersonOutlineOutlinedIcon />}
+                title='Notifications'
+                icon={<ContactsOutlinedIcon />}
             />
             <SettingsItem
-                title='Profile'
-                icon={<PersonOutlineOutlinedIcon />}
+                title='General'
+                icon={<HomeOutlinedIcon />}
             />
             <SettingsItem
-                title='Profile'
-                icon={<PersonOutlineOutlinedIcon />}
+                title='Reports'
+                icon={<ReceiptLongOutlinedIcon />}
+            />
+            <SettingsItem
+                title='Security'
+                icon={<HelpOutlineOutlinedIcon />}
             />
         </Box>
     )
