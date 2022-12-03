@@ -2,6 +2,8 @@ import React from 'react'
 import { useColors } from '../hooks'
 import { Box, Typography, IconButton, Button } from '@mui/material';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
+import { Link } from 'react-router-dom';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 const MessageItem = ({name, email, date, message, id}) => {
 
@@ -9,6 +11,27 @@ const MessageItem = ({name, email, date, message, id}) => {
 
   return (
     <Box m='100px' display={'flex'} justifyContent='center' flexDirection='column'>
+        <Box 
+            mb={'50px'} 
+            color={colors.gray[100]}
+            sx={{
+                '& :hover': {
+                        color: colors.gray[100],
+                    }
+            }}
+        >
+            <Link 
+                style={{
+                    color: colors.greenAccent[600], 
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                }} 
+                to={'/messages'}
+            >
+                    <KeyboardBackspaceIcon /><Typography sx={{ml: '10px'}}>Back to Messages</Typography>
+            </Link>
+        </Box>
         <Box>
             <Box>
                 <Typography variant={'h3'}>
