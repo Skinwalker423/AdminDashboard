@@ -50,9 +50,8 @@ function App() {
               <Route path="/line" element={<Line />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/messages" element={<Messages />}>
-                <Route path=":id" element={<Message />} />
-              </Route>
+              <Route path="/messages" element={<Messages />} />
+              <Route path="/messages/:id" element={<Message />} />
             </Routes>
               </div>
             </div>
