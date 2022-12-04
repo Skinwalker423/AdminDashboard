@@ -13,6 +13,7 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Link } from 'react-router-dom';
 import { useColors } from '../../hooks';
 
@@ -122,6 +123,13 @@ const SideBar = () => {
               to={'/contacts'}
               title={'Contacts'}
               icon={<ContactsOutlinedIcon/>}
+              selected={selected}
+              setSelected={setSelected}
+             />
+            <Item
+              to={'/messages'}
+              title={'Messages'}
+              icon={<EmailOutlinedIcon/>}
               selected={selected}
               setSelected={setSelected}
              />
