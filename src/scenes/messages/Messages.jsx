@@ -1,16 +1,16 @@
 import React from 'react'
-import {Box, Typography} from '@mui/material';
+import {Box} from '@mui/material';
 import { mockDataMessages } from '../../data/mockData'
-import { useColors } from '../../hooks';
 import NotificationItem from '../../components/NotificationItem';
+import Header from '../../components/Header';
 
 const Messages = () => {
 
-  const {colors} = useColors();
 
   return (
-    <Box m='20px' backgroundColor={colors.gray[100]}>
-      <Box>
+    <Box m='20px'>
+      <Header title='MESSAGES' subTitle='list of all correspondence' />
+      <Box mt='50px'>
         {mockDataMessages.map(({id, name, email, message, date}) => {
           return (
             <NotificationItem
@@ -20,6 +20,7 @@ const Messages = () => {
               email={email}
               message={message}
               date={date}
+              color={true}
              />
           )
         })}
