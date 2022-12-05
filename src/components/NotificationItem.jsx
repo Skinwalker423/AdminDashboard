@@ -4,9 +4,10 @@ import { useColors } from '../hooks';
 import { Link } from 'react-router-dom';
 
 
-const NotificationItem = ({message, name, email, date, id}) => {
+const NotificationItem = ({message, name, email, date, id, color}) => {
 
   const {colors} = useColors();
+  const messagesColor = color ? 100 : 400;
 
 
   return (
@@ -29,12 +30,12 @@ const NotificationItem = ({message, name, email, date, id}) => {
 					<Typography color={colors.greenAccent[600]}>
 						{`From: ${name}`}
 					</Typography>
-					<Typography color={colors.primary[400]}>
+					<Typography color={colors.primary[messagesColor]}>
 						{date}
 					</Typography>
 				</Box>
 				<Box>
-					<Typography color={colors.primary[400]}>
+					<Typography color={colors.primary[messagesColor]}>
 						{message}
 					</Typography>
 				</Box>
