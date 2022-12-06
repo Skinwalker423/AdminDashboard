@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react'
-import {Box, IconButton, InputBase} from '@mui/material';
+import {Box, IconButton, InputBase, Tooltip} from '@mui/material';
+import { Link } from 'react-router-dom';
 import { ColorModeContext } from '../../theme';
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import NightlightRoundOutlinedIcon from '@mui/icons-material/NightlightRoundOutlined';
@@ -49,19 +50,29 @@ const TopBar = () => {
         </Box>
         <Box
           display='flex'
-        >
-          <IconButton onClick={handleDarkModeButton}>
-            {palette.mode === 'dark' ? <NightlightRoundOutlinedIcon /> : <NightlightOutlinedIcon />}
-          </IconButton>
-          <IconButton onClick={handleNotificationsButton}>
-            {notificationMenu ? <NotificationsIcon /> : <NotificationsNoneOutlinedIcon />}
-          </IconButton>
-          <IconButton onClick={handlePersonButton}>
-            <PersonOutlineOutlinedIcon />
-          </IconButton>
-          <IconButton onClick={handleSettingsButton}>
-            <SettingsOutlinedIcon />
-          </IconButton>
+          alignItems={'center'}
+        > <Tooltip title='Darkmode'>
+            <IconButton onClick={handleDarkModeButton}>
+              {palette.mode === 'dark' ? <NightlightRoundOutlinedIcon /> : <NightlightOutlinedIcon />}
+            </IconButton>
+          </Tooltip>
+          <Tooltip title='Notifications' >
+            <IconButton onClick={handleNotificationsButton}>
+              {notificationMenu ? <NotificationsIcon /> : <NotificationsNoneOutlinedIcon />}
+            </IconButton>
+          </Tooltip>
+          <Tooltip title='Team contacts' >
+            <Link to='/team'>
+              <IconButton onClick={handlePersonButton}>
+                  <PersonOutlineOutlinedIcon />
+              </IconButton>
+            </Link>
+          </Tooltip>
+          <Tooltip title='Settings' >
+            <IconButton onClick={handleSettingsButton}>
+              <SettingsOutlinedIcon />
+            </IconButton>
+          </Tooltip>
         </Box>
         {notificationMenu && <NotificationMenu />}
         {showSettings && <Settings />}
