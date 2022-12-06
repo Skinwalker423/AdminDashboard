@@ -32,6 +32,9 @@ const TopBar = () => {
   const handleSettingsButton = () => {
     setShowSettings((bool) => !bool);
   }
+  const handlePersonButton = () => {
+    console.log('clicked person icon');
+  }
 
 
   return (
@@ -53,7 +56,7 @@ const TopBar = () => {
           <IconButton onClick={handleNotificationsButton}>
             {notificationMenu ? <NotificationsIcon /> : <NotificationsNoneOutlinedIcon />}
           </IconButton>
-          <IconButton>
+          <IconButton onClick={handlePersonButton}>
             <PersonOutlineOutlinedIcon />
           </IconButton>
           <IconButton onClick={handleSettingsButton}>
