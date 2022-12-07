@@ -1,17 +1,15 @@
 import React from 'react'
-import {Box} from '@mui/material';
+import { Box } from '@mui/material'
 import { mockDataMessages } from '../../data/mockData'
-import NotificationItem from '../../components/NotificationItem';
-import Header from '../../components/Header';
+import NotificationItem from '../../components/NotificationItem'
+import Header from '../../components/Header'
 
 const Messages = () => {
-
-
   return (
-    <Box m='20px'>
-      <Header title='MESSAGES' subTitle='list of all correspondence' />
-      <Box mt='50px'>
-        {mockDataMessages.map(({id, name, email, message, date}) => {
+    <Box m="20px">
+      <Header title="MESSAGES" subTitle="list of all correspondence" />
+      <Box mt="50px">
+        {mockDataMessages.map(({ id, name, email, message, date }) => {
           return (
             <NotificationItem
               key={id}
@@ -21,7 +19,7 @@ const Messages = () => {
               message={message}
               date={date}
               color={true}
-             />
+            />
           )
         })}
       </Box>

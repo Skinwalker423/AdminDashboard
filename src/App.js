@@ -1,29 +1,27 @@
-import { Routes, Route } from "react-router-dom";
-import { ColorModeContext, useMode } from "./theme";
-import {ThemeProvider, CssBaseline} from '@mui/material';
-import TopBar from "./scenes/global/TopBar";
-import SideBar from "./scenes/global/SideBar";
-import Dashboard from "./scenes/dashboard";
-import Bar from "./scenes/Bar";
-import Contacts from "./scenes/Contacts";
-import FAQ from "./scenes/FAQ";
-import Form from "./scenes/Form";
-import Geography from "./scenes/Geography";
-import Invoices from "./scenes/Invoices";
-import Line from "./scenes/Line";
-import Pie from "./scenes/Pie";
-import Team from "./scenes/Team";
-import Calendar from "./scenes/Calendar";
-import Messages from "./scenes/messages/Messages";
-import Message from "./scenes/messages/Message";
-
+import { Routes, Route } from 'react-router-dom'
+import { ColorModeContext, useMode } from './theme'
+import { ThemeProvider, CssBaseline } from '@mui/material'
+import TopBar from './scenes/global/TopBar'
+import SideBar from './scenes/global/SideBar'
+import Dashboard from './scenes/dashboard'
+import Bar from './scenes/Bar'
+import Contacts from './scenes/Contacts'
+import FAQ from './scenes/FAQ'
+import Form from './scenes/Form'
+import Geography from './scenes/Geography'
+import Invoices from './scenes/Invoices'
+import Line from './scenes/Line'
+import Pie from './scenes/Pie'
+import Team from './scenes/Team'
+import Calendar from './scenes/Calendar'
+import Messages from './scenes/messages/Messages'
+import Message from './scenes/messages/Message'
 
 function App() {
-
-  const [theme, colorMode] = useMode();
+  const [theme, colorMode] = useMode()
 
   const handleDarkModeButton = () => {
-    colorMode.toggleColorMode();
+    colorMode.toggleColorMode()
   }
 
   return (
@@ -39,28 +37,27 @@ function App() {
               <div className="topbarWrapper">
                 <TopBar />
                 <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/geography" element={<Geography />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/line" element={<Line />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/messages" element={<Messages />} />
-              <Route path="/messages/:id" element={<Message />} />
-            </Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/team" element={<Team />} />
+                  <Route path="/bar" element={<Bar />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/form" element={<Form />} />
+                  <Route path="/geography" element={<Geography />} />
+                  <Route path="/invoices" element={<Invoices />} />
+                  <Route path="/line" element={<Line />} />
+                  <Route path="/pie" element={<Pie />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/messages" element={<Messages />} />
+                  <Route path="/messages/:id" element={<Message />} />
+                </Routes>
               </div>
             </div>
           </main>
-          
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
-  );
+  )
 }
 
-export default App;
+export default App
